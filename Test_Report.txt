@@ -1,0 +1,160 @@
+Checking DateFormat Constructors.........................................................................................
+
+DateFormat(char* date,char* month,char* year)
+date : ddd	month : mm	year : yy
+invalid_argument Exception
+date : dd	month : qweyear : yy
+invalid_argument Exception
+date : dd	month : mm	year : qwe
+invalid_argument Exception
+DateFormat : ddd-mm-yy
+invalid_argument Exception
+
+DateFormat(char* str)
+String : ddd,mm,yy
+invalid_argument Exception
+String : dd,pa,yy
+invalid_argument Exception
+String : dd,mm,asdf
+invalid_argument Exception
+
+Checking Date Constructors.............................................................................................
+Default Constructor, Date: 06-Mar-16
+
+Constructor with Enum Argument
+0-0-157	out_of_range Exception
+0-0-2015	domain_error Exception
+0-0-3000	out_of_range Exception
+0-0-2016	domain_error Exception
+0-23-157	out_of_range Exception
+0-23-2015	domain_error Exception
+0-23-3000	out_of_range Exception
+0-23-2016	domain_error Exception
+0-2-157	out_of_range Exception
+0-2-2015	domain_error Exception
+0-2-3000	out_of_range Exception
+0-2-2016	domain_error Exception
+32-0-157	out_of_range Exception
+32-0-2015	domain_error Exception
+32-0-3000	out_of_range Exception
+32-0-2016	domain_error Exception
+32-23-157	out_of_range Exception
+32-23-2015	domain_error Exception
+32-23-3000	out_of_range Exception
+32-23-2016	domain_error Exception
+32-2-157	out_of_range Exception
+32-2-2015	domain_error Exception
+32-2-3000	out_of_range Exception
+32-2-2016	domain_error Exception
+30-0-157	out_of_range Exception
+30-0-2015	domain_error Exception
+30-0-3000	out_of_range Exception
+30-0-2016	domain_error Exception
+30-23-157	out_of_range Exception
+30-23-2015	domain_error Exception
+30-23-3000	out_of_range Exception
+30-23-2016	domain_error Exception
+30-2-157	out_of_range Exception
+30-2-2015	domain_error Exception
+30-2-3000	out_of_range Exception
+30-2-2016	domain_error Exception
+29-0-157	out_of_range Exception
+29-0-2015	domain_error Exception
+29-0-3000	out_of_range Exception
+29-0-2016	domain_error Exception
+29-23-157	out_of_range Exception
+29-23-2015	domain_error Exception
+29-23-3000	out_of_range Exception
+29-23-2016	domain_error Exception
+29-2-157	out_of_range Exception
+29-2-2015	domain_error Exception
+29-2-3000	out_of_range Exception
+29-2-2016	 Date Constructed, Date : 29-Feb-16
+
+Checking istream
+Enter Date : 4-5-2016
+ Date created using istream : 04-May-16
+
+Checking Constructor with String Argument
+pp-2-2015	invalid_argument Excepton
+-2-2015	invalid_argument Excepton
+31-2-2015	domain_error Exception
+30-2-2000	domain_error Exception
+12--2015	invalid_argument Excepton
+12-pp-2018	invalid_argument Excepton
+12-19-2014	domain_error Exception
+12-5-2060	out_of_range Exception
+12-7-1900	out_of_range Exception
+14-2-2016	Date Constructed, Date : 14-Feb-16
+
+Checking Copy Constructor...............................................................................................
+Source Date : 27-Jan-16
+Date after copying : 27-Jan-16
+
+Checking Operator=()....................................................................................................
+Source Date : 29-Feb-16
+Date after Operator=() 29-Feb-16
+
+Checking Cast Operators................................................................................................
+27-Jan-16, WeekDay : 3
+27-Jan-16, Month : 1
+27-Jan-16, WeekNumber : 4
+
+Checking leapYear()....................................................................................................
+No	05-Feb-15
+Yes	27-Jan-16
+
+Checking Format Fuctions...............................................................................................
+Initial DateFormat : dd-mmm-yy
+Changed DateFormat : dd-0-yyyy
+
+Checking Binary Relational Operators...................................................................................
+Checking Operator==()
+Yes	27-January-2016 == 27-January-2016
+No	27-January-2016 != 29-February-2016
+
+Checking Operator!=()
+No	27-January-2016 == 27-January-2016
+Yes	27-January-2016 != 29-February-2016
+
+Checking Operator<()
+No	27-January-2016 >= 27-January-2016
+Yes	27-January-2016 < 29-February-2016
+
+Checking Operator<=()
+Yes	27-January-2016 <= 27-January-2016
+No	29-February-2016 > 27-January-2016
+
+Checking Operator>()
+No	27-January-2016 <= 27-January-2016
+Yes	29-February-2016 > 27-January-2016
+
+Checking Operator>=()
+Yes	27-January-2016 >= 27-January-2016
+No	27-January-2016 < 29-February-2016
+
+Checking Unary Arithmetic Operators....................................................................................
+Checking Operator++()
+Initial Date : 29-February-2016
+Final Date : 01-March-2016
+
+Checking Operator--()
+Initial Date : 01-March-2016
+Final Date : 29-February-2016
+
+Checking Operator++(int)
+Initial Date : 27-January-2016
+Final Date : 03-February-2016
+
+Checking Operator--(int)
+Initial Date : 03-February-2016
+Final Date : 27-January-2016
+
+Checking Binary Arithmetic Operators....................................................................................
+Checking Operator-()
+Operator-()
+33 = 29-February-2016 - 27-January-2016
+Operator+()
+03-March-2016 = 29-February-2016 + 3
+out_of_range Exception
+30-December-2049 + 100
